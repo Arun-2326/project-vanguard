@@ -3,7 +3,7 @@
    One stylesheet shared by every page: tokens → base → layout → components.
    ========================================================================== */
 
-/* ---------- Fonts (self-hosted, SIL OFL — see assets/fonts/LICENSE.txt) ---------- */
+/* ---------- Fonts (self-hosted, SIL OFL — copied in by npm run build) ---------- */
 @font-face {
   font-family: "Inter";
   font-style: normal;

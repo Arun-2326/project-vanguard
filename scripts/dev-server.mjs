@@ -6,7 +6,7 @@ import { readFile, stat } from "node:fs/promises";
 import { extname, join, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const root = fileURLToPath(new URL("..", import.meta.url));
+const root = fileURLToPath(new URL("../public/", import.meta.url));
 const port = Number(process.env.PORT || 3000);
 
 const TYPES = {
@@ -38,7 +38,7 @@ async function toRequest(req) {
 
 async function resolveFile(pathname) {
   const clean = normalize(decodeURIComponent(pathname)).replace(/^(\.\.[/\\])+/, "");
-  if (clean.split(/[/\\]/).some((part) => part.startsWith(".") || part === "node_modules" || part === "api" || part === "scripts")) {
+  if (clean.split(/[/\\]/).some((part) => part.startsWith("."))) {
     return null;
   }
   const candidates = clean.endsWith("/") ? [join(clean, "index.html")] : [clean, `${clean}.html`];

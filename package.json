@@ -8,10 +8,15 @@
     "node": ">=20"
   },
   "scripts": {
-    "dev": "node scripts/dev-server.mjs",
+    "build": "node scripts/copy-fonts.mjs",
+    "dev": "npm run build && node scripts/dev-server.mjs",
     "test": "node --test tests/*.test.js"
   },
   "dependencies": {
     "@vercel/blob": "2.8.0"
+  },
+  "devDependencies": {
+    "@fontsource/inter": "5.2.6",
+    "@fontsource/source-serif-4": "5.2.6"
   }
 }

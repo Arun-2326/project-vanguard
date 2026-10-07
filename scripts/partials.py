@@ -5,7 +5,7 @@ Run after editing the navigation or footer:  python3 scripts/partials.py
 import re
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent.parent / "public"
 PAGES = {"explore.html": "/explore", "community.html": "/community", "404.html": None}
 
 index = (ROOT / "index.html").read_text()
