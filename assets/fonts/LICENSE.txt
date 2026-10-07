@@ -1,3 +1,7 @@
+Inter (assets/fonts/inter-*) — Copyright 2020 The Inter Project Authors.
+Source Serif 4 (assets/fonts/source-serif-4-*) — Copyright 2014-2021 Adobe.
+Both distributed via Fontsource under the SIL Open Font License 1.1:
+
 Google Inc.
 
 This Font Software is licensed under the SIL Open Font License, Version 1.1.

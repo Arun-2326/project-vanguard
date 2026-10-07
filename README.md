@@ -56,7 +56,7 @@ to copy them into the other pages.
 ## Quality
 
 - No framework, no build step: hand-written HTML, one stylesheet, small vanilla JS modules.
-- Self-hosted fonts (Inter, Source Serif 4 — SIL OFL), preloaded; strict CSP with no third-party origins.
+- Self-hosted fonts (Inter, Source Serif 4 — SIL OFL, see `assets/fonts/LICENSE.txt`), preloaded; strict CSP with no third-party origins.
 - Respects `prefers-reduced-motion` (the epicycles render a still drawing, reveals are disabled), pauses the canvas off-screen and in background tabs.
 - Keyboard and screen-reader friendly: skip link, labelled controls, live regions for results and form status, visible focus rings.
 - Lighthouse (mobile, local server without compression): Performance 96–99, Accessibility 100, Best Practices 100, SEO 100 on every page.
