@@ -1,0 +1,17 @@
+{
+  "name": "epicycles-3b1b-fan-hub",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Epicycles — an unofficial fan hub celebrating 3Blue1Brown.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node scripts/dev-server.mjs",
+    "test": "node --test tests/*.test.js"
+  },
+  "dependencies": {
+    "@vercel/blob": "2.8.0"
+  }
+}

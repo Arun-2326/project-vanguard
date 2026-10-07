@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mailbag — Epicycles</title>
+  <meta name="description" content="Send the fan mailbag the 3Blue1Brown lesson that changed your mind, a topic you'd love explained, or your own math explainer.">
+  <meta name="theme-color" content="#0b0f14">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The fan mailbag — Epicycles">
+  <meta property="og:description" content="Share the moment a 3Blue1Brown lesson made math click.">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/source-serif-4-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main">
+      <a class="brand" href="/">
+        <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="14" cy="17" r="10" fill="none" stroke="#58c4dd" stroke-width="2"/><circle cx="22" cy="10" r="4.5" fill="none" stroke="#c79363" stroke-width="2"/><circle cx="25.2" cy="6.8" r="2" fill="#f4d35e"/></svg>
+        <span>Epicycles<small>a 3Blue1Brown fan hub</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/explore">Library</a></li>
+        <li><a href="/community" aria-current="page">Mailbag</a></li>
+        <li><a class="nav-cta" href="/#newsletter">Newsletter</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <span class="eyebrow eyebrow--brown">The fan mailbag</span>
+        <h1 id="page-title">When did the math finally click?</h1>
+        <p>Share the lesson that changed how you think, a topic you'd love to see animated, or a math
+          explainer of your own. Every message is read, and the best ones shape the library.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Submit to the mailbag">
+      <div class="container submit-layout">
+        <div class="form-card" data-form-host>
+          <h2>Write to the mailbag</h2>
+          <p>Fields marked optional can be skipped. Everything else helps us understand your story.</p>
+
+          <form class="form" action="/api/submissions" method="post" data-api data-success-template="submission-success">
+            <div class="form-row">
+              <div class="field">
+                <label for="f-name">Your name</label>
+                <input class="input" id="f-name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="60"
+                  data-label="your name" aria-describedby="f-name-error">
+                <p class="field-error" id="f-name-error"></p>
+              </div>
+              <div class="field">
+                <label for="f-email">Email</label>
+                <input class="input" id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="254"
+                  placeholder="you@example.com" data-label="your email" aria-describedby="f-email-hint f-email-error">
+                <p class="hint" id="f-email-hint">Only used to reply to you. Never shown publicly.</p>
+                <p class="field-error" id="f-email-error"></p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="f-kind">What are you sending?</label>
+              <select class="select" id="f-kind" name="kind" required data-label="what you're sending" aria-describedby="f-kind-error">
+                <option value="">Choose one…</option>
+                <option value="lesson-story">A lesson that changed how I think</option>
+                <option value="video-idea">A topic I'd love to see explained</option>
+                <option value="my-explainer">My own math explainer (e.g. a SoME entry)</option>
+                <option value="thank-you">A thank-you note</option>
+              </select>
+              <p class="field-error" id="f-kind-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="f-title">Headline</label>
+              <input class="input" id="f-title" name="title" type="text" required minlength="4" maxlength="100"
+                placeholder="e.g. Eigenvectors finally made sense" data-label="a headline" aria-describedby="f-title-error">
+              <p class="field-error" id="f-title-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="f-message">Your story</label>
+              <textarea class="textarea" id="f-message" name="message" required minlength="30" maxlength="1500" rows="6"
+                placeholder="What were you stuck on, and what changed when you watched it?" data-label="your story"
+                aria-describedby="f-message-meta f-message-error"></textarea>
+              <div class="field-meta" id="f-message-meta">
+                <span class="hint">At least 30 characters.</span>
+                <span class="counter" data-counter-for="message" aria-hidden="true">0 / 1500</span>
+              </div>
+              <p class="field-error" id="f-message-error"></p>
+            </div>
+
+            <div class="field">
+              <label for="f-link">Link <span class="optional">(optional)</span></label>
+              <input class="input" id="f-link" name="link" type="url" inputmode="url" maxlength="300" placeholder="https://"
+                data-label="the link" aria-describedby="f-link-hint f-link-error">
+              <p class="hint" id="f-link-hint">A video, your own explainer, or anything that helps tell the story.</p>
+              <p class="field-error" id="f-link-error"></p>
+            </div>
+
+            <fieldset class="field">
+              <legend>Favourite series <span class="optional">(optional)</span></legend>
+              <div class="choice-grid">
+                <label class="choice"><input type="radio" name="favourite" value="linear-algebra"><span>Linear algebra</span></label>
+                <label class="choice"><input type="radio" name="favourite" value="calculus"><span>Calculus</span></label>
+                <label class="choice"><input type="radio" name="favourite" value="neural-networks"><span>Neural networks</span></label>
+                <label class="choice"><input type="radio" name="favourite" value="differential-equations"><span>Differential equations</span></label>
+                <label class="choice"><input type="radio" name="favourite" value="lockdown-math"><span>Lockdown Math</span></label>
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <label class="checkbox"><input type="checkbox" name="mayFeature"> <span>You may feature my first name and story on this site.</span></label>
+              <label class="checkbox"><input type="checkbox" name="newsletter"> <span>Also send me the fan newsletter.</span></label>
+            </div>
+
+            <div class="field">
+              <label class="checkbox">
+                <input type="checkbox" name="agree" required data-label="the agreement" aria-describedby="f-agree-error">
+                <span>I understand this is an unofficial fan project and my submission is stored so it can be read and replied to.</span>
+              </label>
+              <p class="field-error" id="f-agree-error"></p>
+            </div>
+
+            <div class="hp" aria-hidden="true">
+              <label for="f-website">Leave this empty</label>
+              <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="form-status" role="status" aria-live="polite"></div>
+
+            <div>
+              <button class="btn btn--primary" type="submit">
+                Send to the mailbag
+                <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M3 8h9M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+          </form>
+
+          <template id="submission-success">
+            <div class="success-card">
+              <svg viewBox="0 0 56 56" aria-hidden="true" focusable="false"><circle cx="28" cy="28" r="26" fill="rgba(131,193,103,.15)" stroke="#83c167" stroke-width="2"/><path d="M17 29l7 7 15-16" fill="none" stroke="#83c167" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <h2>Thank you — it's in the mailbag.</h2>
+              <p data-slot="message">We read every message. If we feature yours or have a question, we'll reply by email.</p>
+              <p>Reference: <span class="ref-code" data-slot="id">—</span></p>
+              <div class="hero-actions">
+                <button class="btn btn--ghost" type="button" data-reset>Send another</button>
+                <a class="btn btn--primary" href="/explore">Back to the library</a>
+              </div>
+            </div>
+          </template>
+        </div>
+
+        <aside class="aside-stack" aria-label="About the mailbag">
+          <div class="aside-card">
+            <h3>What happens next</h3>
+            <ol class="steps">
+              <li><div><strong>It's stored safely</strong>Your message is saved privately — never published without permission.</div></li>
+              <li><div><strong>A human reads it</strong>Every story is read, and great suggestions join the library.</div></li>
+              <li><div><strong>The best get featured</strong>Only if you ticked the box, and only your first name.</div></li>
+            </ol>
+          </div>
+          <div class="aside-card">
+            <h3>Making your own explainer?</h3>
+            <p>The Summer of Math Exposition has inspired thousands of new math videos and articles.
+              Share yours here and we'll help more people find it.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">FAQ</span>
+          <h2 id="faq-title">Good questions, honest answers.</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Is this the official 3Blue1Brown website?</summary>
+            <p>No. Epicycles is an independent fan project made out of appreciation. It isn't affiliated with or endorsed by 3Blue1Brown or Grant Sanderson. For the real thing, visit 3blue1brown.com or the YouTube channel.</p>
+          </details>
+          <details>
+            <summary>Will my message reach Grant?</summary>
+            <p>Not directly — this mailbag is read by the fans who run this site. If you want to contact 3Blue1Brown, use the channels listed on the official website.</p>
+          </details>
+          <details>
+            <summary>What do you do with my data?</summary>
+            <p>Submissions and newsletter sign-ups are stored privately on the server so we can read and reply to them. Your email is never displayed or shared, and you can ask for your data to be deleted at any time by replying to any email from us.</p>
+          </details>
+          <details>
+            <summary>Can I submit something I made?</summary>
+            <p>Yes, please! Choose "My own math explainer" and include a link. Videos, articles, interactive pages and Manim experiments are all welcome.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="/">
+            <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><circle cx="14" cy="17" r="10" fill="none" stroke="#58c4dd" stroke-width="2"/><circle cx="22" cy="10" r="4.5" fill="none" stroke="#c79363" stroke-width="2"/><circle cx="25.2" cy="6.8" r="2" fill="#f4d35e"/></svg>
+            <span>Epicycles</span>
+          </a>
+          <p class="footer-blurb">An unofficial fan project. Not affiliated with or endorsed by 3Blue1Brown or Grant Sanderson. The best way to say thanks is to support the real thing.</p>
+        </div>
+        <div>
+          <h2>This site</h2>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/explore">Library</a></li>
+            <li><a href="/community">Mailbag</a></li>
+            <li><a href="/#newsletter">Newsletter</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2>The real thing</h2>
+          <ul>
+            <li><a href="https://www.youtube.com/@3blue1brown" rel="noopener noreferrer" target="_blank">YouTube channel</a></li>
+            <li><a href="https://www.3blue1brown.com/" rel="noopener noreferrer" target="_blank">3blue1brown.com</a></li>
+            <li><a href="https://www.patreon.com/3blue1brown" rel="noopener noreferrer" target="_blank">Support on Patreon</a></li>
+            <li><a href="https://github.com/3b1b/manim" rel="noopener noreferrer" target="_blank">Manim on GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span data-year>2026</span> Epicycles fan project</span>
+        <span>Made with care, vectors and a lot of π.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
